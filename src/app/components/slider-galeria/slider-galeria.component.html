@@ -1,0 +1,58 @@
+<div class="gallery">
+  <p-galleria
+    [value]="movies"
+    [showItemNavigators]="false"
+    [showThumbnails]="false"
+    [showIndicators]="true"
+    [circular]="true"
+    [autoPlay]="true"
+    [transitionInterval]="3000"
+    [showIndicatorsOnItem]="true"
+    [showThumbnails]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img
+        alt="..."
+        [src]="item.backdrop_path"
+        style="width: 100%; display: block; height: 550px; object-fit: cover"
+      />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="grid grid-nogutter justify-content-center">
+        <img alt="..." [src]="item.backdrop_path" style="display: block" />
+      </div>
+    </ng-template>
+    <ng-template pTemplate="caption" let-item="$implicit">
+      <div class="gallery-container d-flex w-100 flex-column">
+        <div class="gallery-title">
+          <h4>{{ item.original_title }}</h4>
+        </div>
+        <div class="gallery-text">
+          <p>{{ item.overview | truncate : [230] }}</p>
+        </div>
+
+        <div
+          class="gallery-img-footer d-flex flex-row flex-start w-100 justify-content-start align-items-end"
+        >
+          <div>
+            <svg
+              width="72"
+              height="72"
+              viewBox="0 0 72 72"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="36" cy="36" r="36" fill="#F1F1F1" />
+              <path
+                d="M54.72 35.6398L26.1 52.1636L26.1 19.116L54.72 35.6398Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div><p>Watch Now</p></div>
+        </div>
+      </div>
+    </ng-template>
+  </p-galleria>
+</div>

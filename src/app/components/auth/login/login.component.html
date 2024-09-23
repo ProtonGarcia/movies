@@ -1,0 +1,120 @@
+<div class="main">
+  <div class="container" id="container">
+    <form [formGroup]="loginForm" class="login-form">
+      <div class="form-group row">
+        <label for="username" class="space-left col-sm-2 col-form-label">Email Id</label>
+        <div class="col-sm-4">
+          <input
+            [autocomplete]="false"
+            pInputText
+            id="username"
+            formControlName="user"
+            matInput
+            placeholder=""
+          />
+          <small
+            class="p-error block"
+            *ngIf="
+              loginForm.get('user')?.invalid && loginForm.get('user')?.dirty
+            "
+          >
+            Email id es <b>Requerido</b></small
+          >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="space-left col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-4">
+          <p-iconField iconPosition="right">
+            <input
+              [autocomplete]="false"
+              pInputText
+              id="password"
+              formControlName="password"
+              [type]="hide ? 'password' : 'text'"
+              matInput
+              placeholder="8 characters"
+            />
+          </p-iconField>
+
+          <small
+            class="p-error block"
+            *ngIf="
+              loginForm.get('password')?.invalid &&
+              loginForm.get('password')?.dirty
+            "
+          >
+            password es <b>Requerido</b></small
+          >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-4">
+          <div
+            class="new-account w-100 d-flex align-items-center justify-content-between custom-text-width"
+          >
+            <label>
+              <input type="checkbox" />
+              Remember me
+            </label>
+            <span class="text-right text-decoration-underline"
+              >Forgot Password</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label"></label>
+
+        <div class="col-sm-4">
+          <button
+            type="submit"
+            class="button-submit"
+            [disabled]="loginForm.invalid"
+            (click)="login()"
+          >
+            Sing In
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label"></label>
+
+        <div class="col-sm-4">
+          <div class="strike-text">
+            <h2>Or</h2>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="social-network"
+              [disabled]="loginForm.invalid"
+            >
+              Google
+            </button>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="social-network"
+              [disabled]="loginForm.invalid"
+            >
+              Facebook
+            </button>
+          </div>
+          <div class="new-account d-flex justify-content-between">
+            <span class="text-left text-secondary"
+              >Don’t have a account ?
+            </span>
+            <span class="text-right">Sing in</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

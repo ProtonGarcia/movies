@@ -1,0 +1,41 @@
+app-carousel {
+    width: 1117px;
+    height: 291px;
+    margin-top: 65px;
+}
+
+@media (max-width: 576px) {
+    app-carousel {
+        width: 285px !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+    app-carousel {
+        width: 500px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    app-carousel {
+        width: 600px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    app-carousel {
+        width: 950px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+    app-carousel {
+        width: 1150px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    app-carousel {
+        width: 1200px !important;
+    }
+}

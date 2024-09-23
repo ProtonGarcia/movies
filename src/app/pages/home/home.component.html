@@ -1,0 +1,9 @@
+<app-slider-galeria class="w-100 mb-3"></app-slider-galeria>
+<div class="d-flex flex-column align-items-center carousel-container-custom">
+  <app-carousel
+    *ngFor="let data of carousel"
+    [title]="data.name"
+    [dataSource]="data.datasource"
+    [idAncla]="data.ancla"
+  ></app-carousel>
+</div>
