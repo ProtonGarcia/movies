@@ -34,6 +34,11 @@
                 "bundleName": "light",
                 "inject": false
               },
+              {
+                "input": "./src/assets/style/pichones.scss",
+                "bundleName": "pichones",
+                "inject": false
+              },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css"
@@ -106,6 +111,11 @@
                 "bundleName": "light",
                 "inject": false
               },
+              {
+                "input": "./src/assets/style/pichones.scss",
+                "bundleName": "pichones",
+                "inject": false
+              },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css"
@@ -115,5 +125,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

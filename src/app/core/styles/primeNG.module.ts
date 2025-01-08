@@ -12,7 +12,8 @@ import { GalleriaModule } from 'primeng/galleria';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { CheckboxModule } from 'primeng/checkbox';
-
+import { ImageModule } from 'primeng/image';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   imports: [
@@ -29,6 +30,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     InputGroupModule,
     InputGroupAddonModule,
     CheckboxModule,
+    ImageModule,
+    PanelModule,
   ],
   exports: [
     InputSwitchModule,
@@ -44,6 +47,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     InputGroupModule,
     InputGroupAddonModule,
     CheckboxModule,
+    ImageModule,
+    PanelModule,
   ],
 })
 export class PrimeNGModules {}

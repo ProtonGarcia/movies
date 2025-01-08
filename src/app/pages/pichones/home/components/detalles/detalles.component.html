@@ -1,0 +1,48 @@
+<div class="mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mt-2 mb-2">
+        <p-panel header="El FLECHAZO">
+          <p class="m-0">
+            Todo comenzó en 2014, en un salón de clases, entre miradas y
+            sonrisas tímidas. Al principio, inicio como un romance de colegio,
+            pero después de un año, decidimos oficializar nuestro noviazgo con
+            el permiso de nuestros padres.
+          </p>
+        </p-panel>
+      </div>
+      <div class="col-12 mt-2 mb-2">
+        <p-panel header="EL CAMINO">
+          <p class="m-0">
+            Con el tiempo, nuestro amor, al igual que nosotros fue madurando.
+            Juntos enfrentamos los altibajos de crecer, compartiendo los
+            desafíos como las alegrías. Los 10 años que hemos estado juntos han
+            sido como horas.
+          </p>
+        </p-panel>
+      </div>
+      <div class="col-12 mt-2 mb-2">
+        <p-panel header="UN COMPROMISO">
+          <p class="m-0">
+            Todo lo que soñábamos cuando éramos apenas adolescentes ahora es
+            realidad. El 10 de noviembre de 2023, dimos un paso más a nuestra
+            relación y comprometimos.
+          </p>
+        </p-panel>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="galleria">
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" 
+    [transitionInterval]="3000"
+    [circular]="false"
+    [autoPlay]="true"
+    [containerStyle]="{ 'max-width': '640px' }" [numVisible]="5">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.itemImageSrc" style="width:100%" />
+        </ng-template>
+        
+    </p-galleria>
+</div>

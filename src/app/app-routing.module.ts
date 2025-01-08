@@ -15,6 +15,11 @@ const routes: Routes = [
       import('./components/auth/login.module').then((m) => m.LoginModule),
   },
   {
+    path: 'eventos',
+    loadChildren: () =>
+      import('./pages/pichones/pichones.module').then((m) => m.PichonesModule),
+  },
+  {
     path: 'pages',
     pathMatch: 'full',
     component: NavigationComponent,
