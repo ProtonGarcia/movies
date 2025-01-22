@@ -4,10 +4,15 @@ import { Relacionados } from 'src/app/core/models/pichones/relacionados.model';
 import { DataService } from 'src/app/core/services/data.service';
 import { SessionStorageService } from 'src/app/core/services/sessionStorage.service';
 
+interface City {
+  name: string,
+  code: string
+}
 @Component({
-  selector: 'app-asistencia',
-  templateUrl: './asistencia.component.html',
-  styleUrls: ['./asistencia.component.css'],
+    selector: 'app-asistencia',
+    templateUrl: './asistencia.component.html',
+    styleUrls: ['./asistencia.component.css'],
+    standalone: false
 })
 export class AsistenciaComponent implements OnInit, OnDestroy {
   active: boolean = false;
@@ -19,6 +24,11 @@ export class AsistenciaComponent implements OnInit, OnDestroy {
 
   public subscribe!: Subscription;
 
+  cities!: City[];
+
+  selectedCities!: City[];
+  
+
   constructor(
     private sessionStorage: SessionStorageService,
     private dataService: DataService
@@ -26,10 +36,19 @@ export class AsistenciaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscribe.remove;
+    
   }
 
   ngOnInit() {
     this.username = this.sessionStorage.getData('username') ?? '';
+
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ];
 
     this.subscribe = this.dataService.getData().subscribe((resp) => {
       if (resp.component == 'AsistenciaComponent' && resp.action == 'login') {

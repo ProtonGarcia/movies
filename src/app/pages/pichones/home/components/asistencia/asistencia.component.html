@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-12 my-5 text-center">
-      <button (click)="confirm()" class="p-button btn--outline-blue">
+      <button (click)="confirm()" class="p-button btn--outline-blue h-base">
         <span
           class="font-color--blue font-size--small font-fam--caslon font-weight--400"
           >Confirmar asistencia</span
@@ -60,34 +60,29 @@
     </div>
   </div>
 
-  <div class="col-12">
-    <span
+  <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+   
+    <div class="w-base">
+      <span
       class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400 text-start"
     >
       ¿Quienes asistirán?
     </span>
-    <mat-form-field class="w-100">
-      <mat-label>Selecciona los asistentes</mat-label>
-      <mat-select multiple>
-        <mat-option
-          *ngFor="let relacionado of relacionados"
-          [value]="relacionado.invitado"
-          >{{ relacionado.username }}</mat-option
-        >
-      </mat-select>
-    </mat-form-field>
+    </div>
+    <div class="text-center">
+      <p-multiselect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select Cities" [maxSelectedLabels]="3" styleClass="w-full" />
+    </div>
 
-    <!-- <p-select optionLabel="name" placeholder="Select a City" class="w-full md:w-56" /> -->
   </div>
 
   <div class="col-12 text-center">
-    <button class="mt-5 mb-3 p-button btn--bg-blue btn--outline-blue">
+    <button class="mt-5 mb-3 p-button btn--bg-blue btn--outline-blue h-base">
       <span class="font-color--white">Confirmar Asistencia</span>
     </button>
   </div>
 
   <div class="col-12 text-center">
-    <button class="mt-5 mb-3 p-button btn--outline-blue">
+    <button class="mt-5 mb-3 p-button btn--outline-blue h-base">
       <span class="font-color--blue">No asistiré</span>
     </button>
   </div>

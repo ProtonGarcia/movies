@@ -1,4 +1,4 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, provideAppInitializer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -60,11 +60,10 @@ function initializeApp(): () => Promise<void> {
     LoginModule,
   ],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      multi: true,
-    },
+    provideAppInitializer(() => {
+        const initializerFn = (initializeApp)();
+        return initializerFn();
+      }),
     ...appConfig.providers!,
   ],
   bootstrap: [AppComponent],

@@ -11,9 +11,10 @@ import { Movie } from 'src/app/core/models/movie.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css'],
+    selector: 'app-carousel',
+    templateUrl: './carousel.component.html',
+    styleUrls: ['./carousel.component.css'],
+    standalone: false
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() title: string = '';

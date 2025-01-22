@@ -69,9 +69,10 @@ const TREE_DATA: FoodNode[] = [
   },
 ];
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css'],
+    selector: 'app-sidenav',
+    templateUrl: './sidenav.component.html',
+    styleUrls: ['./sidenav.component.css'],
+    standalone: false
 })
 export class SidenavComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;

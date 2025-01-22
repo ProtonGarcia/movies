@@ -5,11 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
-  selector: 'app-module-header',
-  templateUrl: './module-header.component.html',
-  styleUrls: [],
-  standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+    selector: 'app-module-header',
+    templateUrl: './module-header.component.html',
+    styleUrls: [],
+    imports: [MatCardModule, MatIconModule, MatButtonModule]
 })
 export class ModuleHeaderComponent implements OnInit, AfterViewInit {
   @Input() title: string = 'sin nombre';

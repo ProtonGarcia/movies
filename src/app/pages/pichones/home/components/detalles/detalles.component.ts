@@ -2,10 +2,11 @@ import { AfterViewInit, Component } from '@angular/core';
 import { PhotoService } from '../../../core/services/imageservice';
 
 @Component({
-  selector: 'app-detalles',
-  templateUrl: './detalles.component.html',
-  styleUrls: ['./detalles.component.css'],
-  providers: [PhotoService],
+    selector: 'app-detalles',
+    templateUrl: './detalles.component.html',
+    styleUrls: ['./detalles.component.css'],
+    providers: [PhotoService],
+    standalone: false
 })
 export class DetallesComponent implements AfterViewInit {
   images: {

@@ -4,9 +4,10 @@ import { ThemeService } from 'src/app/core/services/theme.service';
 import { UtilService } from 'src/app/core/services/util.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css'],
+    standalone: false
 })
 export class NavbarComponent implements OnInit {
   public username: string = 'Pruebas';

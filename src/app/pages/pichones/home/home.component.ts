@@ -6,9 +6,10 @@ import { SessionStorageService } from 'src/app/core/services/sessionStorage.serv
 import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
-  selector: 'app-home-pichones',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+    selector: 'app-home-pichones',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    standalone: false
 })
 export class HomeComponent {
   constructor(

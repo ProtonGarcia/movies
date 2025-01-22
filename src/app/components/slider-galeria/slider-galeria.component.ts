@@ -8,9 +8,10 @@ import { Movie } from 'src/app/core/models/movie.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
-  selector: 'app-slider-galeria',
-  templateUrl: './slider-galeria.component.html',
-  styleUrls: ['./slider-galeria.component.css'],
+    selector: 'app-slider-galeria',
+    templateUrl: './slider-galeria.component.html',
+    styleUrls: ['./slider-galeria.component.css'],
+    standalone: false
 })
 export class SliderGaleriaComponent implements AfterViewInit, OnChanges {
   movies: any[] | undefined;

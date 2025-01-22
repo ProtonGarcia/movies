@@ -32,6 +32,12 @@ $font-libre-caslon: "Libre Caslon";
 $font-monserrat: "Montserrat";
 $font-high-sprited: "High Spirited";
 
+//width
+$w-base: 327px;
+
+//height
+$h-base: 48px;
+
 .custom-heading-sprited {
   margin-right: 50px;
   margin-bottom: -16px;
@@ -105,13 +111,21 @@ $font-high-sprited: "High Spirited";
   }
 }
 
+.w-base{
+  width: $w-base;
+}
+
+.h-base{
+  height: $h-base;
+}
+
 .p-button {
   background-color: transparent !important;
   border-radius: 4px;
   font-family: $font-libre-caslon;
   font-weight: $font-weight;
   font-size: 14px;
-  width: 327px;
+  width: $w-base;
   display: inline-block;
 
   text-align: center;
@@ -163,6 +177,8 @@ app-detalles {
   }
 
   .p-panel {
+    background: transparent !important;
+
     .p-component {
       width: 100%;
     }
@@ -175,7 +191,6 @@ app-detalles {
       border: 1px solid;
       border-radius: 4px;
       padding-top: 0px;
-      background: transparent;
       border-color: $light-pichones-border-color-light-blue;
     }
   }
@@ -184,3 +199,6 @@ app-detalles {
 // material components
 
 
+.p-multiselect{
+  width: $w-base;
+}
