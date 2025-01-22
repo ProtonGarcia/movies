@@ -44,7 +44,7 @@ import { PichonesModule } from './pages/pichones/pichones.module';
     NavigationModule,
     BrowserAnimationsModule,
     MaterialModule,
-    PrimeNGModules,
+    // PrimeNGModules,
     HttpClientModule,
     PichonesModule,
     LoginModule

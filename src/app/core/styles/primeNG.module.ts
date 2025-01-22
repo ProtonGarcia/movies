@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';
@@ -16,6 +15,7 @@ import { ImageModule } from 'primeng/image';
 import { PanelModule } from 'primeng/panel';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectModule } from 'primeng/select';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
