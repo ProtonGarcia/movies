@@ -1,48 +1,394 @@
-<div class="mt-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mt-2 mb-2">
-        <p-panel header="El FLECHAZO">
-          <p class="m-0">
-            Todo comenzó en 2014, en un salón de clases, entre miradas y
-            sonrisas tímidas. Al principio, inicio como un romance de colegio,
-            pero después de un año, decidimos oficializar nuestro noviazgo con
-            el permiso de nuestros padres.
-          </p>
-        </p-panel>
-      </div>
-      <div class="col-12 mt-2 mb-2">
-        <p-panel header="EL CAMINO">
-          <p class="m-0">
-            Con el tiempo, nuestro amor, al igual que nosotros fue madurando.
-            Juntos enfrentamos los altibajos de crecer, compartiendo los
-            desafíos como las alegrías. Los 10 años que hemos estado juntos han
-            sido como horas.
-          </p>
-        </p-panel>
-      </div>
-      <div class="col-12 mt-2 mb-2">
-        <p-panel header="UN COMPROMISO">
-          <p class="m-0">
-            Todo lo que soñábamos cuando éramos apenas adolescentes ahora es
-            realidad. El 10 de noviembre de 2023, dimos un paso más a nuestra
-            relación y comprometimos.
-          </p>
-        </p-panel>
+<div class="d-flex flex-column">
+  <div class="mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 my-5 text-center">
+          <span
+            class="m-0 font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >¡El gran día se acerca!</span
+          >
+
+          <div class="d-flex flex-row justify-content-center align-items-center">
+            <div class="d-flex flex-column w-25">
+                <span
+                  class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
+                  >24</span
+                >
+                <span>Días</span>
+              </div>
+              <div class="d-flex flex-column w-25">
+                <span
+                  class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
+                  >24</span
+                >
+                <span>Horas</span>
+              </div><div class="d-flex flex-column w-25">
+                <span
+                  class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
+                  >24</span
+                >
+                <span>Minutos</span>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 my-2">
+          <div class="col-12 text-center">
+            <h2
+              class="font-color--blue font-size--xlarge font-fam--sprited font-weight--400 custom-heading-sprited"
+            >
+              Escribiendo una
+            </h2>
+
+            <h2
+              class="font-color--blue font-size--large font-fam--caslon font-weight--400 custom-heading-caslon"
+            >
+              HISTORIA
+            </h2>
+          </div>
+        </div>
+        <div class="col-12 my-2">
+          <p-panel>
+            <h2
+              class="mt-3 font-color--blue font-size--normal font-fam--caslon font-weight--400"
+            >
+              El FLECHAZO
+            </h2>
+            <p
+              class="m-0 font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+            >
+              Todo comenzó en 2014, en un salón de clases, entre miradas y
+              sonrisas tímidas. Al principio, inicio como un romance de colegio,
+              pero después de un año, decidimos oficializar nuestro noviazgo con
+              el permiso de nuestros padres.
+            </p>
+          </p-panel>
+        </div>
+        <div class="col-12 my-2">
+          <p-panel>
+            <h2
+              class="mt-3 font-color--blue font-size--normal font-fam--caslon font-weight--400"
+            >
+              EL CAMINO
+            </h2>
+            <p
+              class="m-0 font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+            >
+              Con el tiempo, nuestro amor, al igual que nosotros fue madurando.
+              Juntos enfrentamos los altibajos de crecer, compartiendo los
+              desafíos como las alegrías. Los 10 años que hemos estado juntos
+              han sido como horas.
+            </p>
+          </p-panel>
+        </div>
+        <div class="col-12 my-2">
+          <p-panel>
+            <h2
+              class="mt-3 font-color--blue font-size--normal font-fam--caslon font-weight--400"
+            >
+              UN COMPROMISO
+            </h2>
+            <p
+              class="m-0 font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+            >
+              Todo lo que soñábamos cuando éramos apenas adolescentes ahora es
+              realidad. El 10 de noviembre de 2023, dimos un paso más a nuestra
+              relación y comprometimos.
+            </p>
+          </p-panel>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="galleria">
-    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" 
-    [transitionInterval]="3000"
-    [circular]="false"
-    [autoPlay]="true"
-    [containerStyle]="{ 'max-width': '640px' }" [numVisible]="5">
+  <div class="galleria mt-4">
+    <div class="container">
+      <p-galleria
+        [value]="images"
+        [responsiveOptions]="responsiveOptions"
+        [transitionInterval]="3000"
+        [circular]="true"
+        [autoPlay]="true"
+        [showItemNavigators]="false"
+        [showThumbnails]="false"
+        [containerStyle]="{ 'max-width': '640px' }"
+        [numVisible]="5"
+      >
         <ng-template pTemplate="item" let-item>
-            <img [src]="item.itemImageSrc" style="width:100%" />
+          <img
+            [src]="item.itemImageSrc"
+            style="width: 100%; object-fit: cover"
+          />
         </ng-template>
-        
-    </p-galleria>
+      </p-galleria>
+    </div>
+  </div>
+
+  <div class="mt-4 detalles">
+    <div class="container text-center">
+      <img
+        src="../../../../../../assets/images/pichones/detalles/icons/rings.png"
+        alt=""
+      />
+      <h2
+        class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+      >
+        Estas invitado a nuestra boda
+      </h2>
+      <span
+        class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+        >Comenzamos un nuevo capitulo en nuestra vida y queremos que seas parte
+        de el.</span
+      >
+    </div>
+
+    <div class="container text-center mt-5">
+      <div class="col-12 text-center">
+        <h2
+          class="font-color--blue font-size--xlarge font-fam--sprited font-weight--400 custom-heading-sprited"
+        >
+          Detalles de
+        </h2>
+        <h2
+          class="font-color--blue font-size--large font-fam--caslon font-weight--400 custom-heading-caslon"
+        >
+          LA BODA
+        </h2>
+      </div>
+      <img
+        src="../../../../../../assets/images/pichones/detalles/icons/church.png"
+        alt=""
+        class="my-3"
+      />
+      <h2
+        class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+      >
+        LUGAR:
+      </h2>
+      <h2
+        class="font-color--blue font-size--mlarge font-fam--caslon font-weight--400"
+      >
+        Quinta Mirasol
+      </h2>
+      <h2
+        class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+      >
+        4:00 PM | 01 Marzo 2025
+      </h2>
+      <h2
+        class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+      >
+        ¿Cómo llegar?
+      </h2>
+      <span
+        class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+        >Frente a tanques Holanda, Calle Antigua a Huizucar, San Salvador</span
+      >
+
+      <div class="col-12">
+        <button class="my-3 p-button btn--outline-blue">
+          <img
+            src="../../../../../../assets/images/pichones/detalles/social/maps.png"
+            alt="button-image"
+          />
+          <span
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >Ver en Google Maps</span
+          >
+        </button>
+      </div>
+
+      <div class="col-12">
+        <button class="my-3 p-button btn--outline-blue">
+          <img
+            src="../../../../../../assets/images/pichones/detalles/social/waze.png"
+            alt="button-image"
+          />
+          <span
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >Ver en Waze</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <div class="container dresscode text-center mt-5">
+      <div class="head mb-5">
+        <div class="row">
+          <div class="col-12">
+            <img
+              src="../../../../../../assets/images/pichones/detalles/icons/rings.png"
+              alt=""
+            />
+          </div>
+          <div class="col-12">
+            <h2
+              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >
+              DRESS CODE:
+            </h2>
+          </div>
+          <div class="col-12">
+            <h2
+              class="font-color--blue font-size--mlarge font-fam--caslon font-weight--400"
+            >
+              Coctel de noche
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="caballeros">
+        <div class="row">
+          <div class="col-12">
+            <h2
+              class="font-color--blue font-size--large font-fam--caslon font-weight--400"
+            >
+              Caballeros:
+            </h2>
+          </div>
+          <div class="col-12">
+            <span
+              class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+              >Camisa y pantalón formal, zapatos de vestir o casuales. opcional:
+              saco, corbata o blazer.</span
+            >
+          </div>
+          <div class="col-12">
+            <span
+              class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+              >No Usar: Tenis deportivos, jeans y camisetas. color negro y azul
+              marino en saco o blazer</span
+            >
+          </div>
+
+          <div class="col-12">
+            <button class="mt-5 mb-3 p-button btn--outline-blue">
+              <img
+                src="../../../../../../assets/images/pichones/detalles/social/pinterest.png"
+                alt="button-image"
+              />
+              <span
+                class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
+                >Ver sugerencias</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="damas mt-4">
+        <div class="row">
+          <div class="col-12">
+            <h2
+              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >
+              Damas:
+            </h2>
+          </div>
+          <div class="col-12">
+            <span
+              class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+              >Vestido Largo o Midi, Conjuntos de falda y blusa Zapato abierto o
+              cerrado.</span
+            >
+          </div>
+          <div class="col-12">
+            <span
+              class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+              >No llevar: Color negro, azul marino, blanco, beige y sus
+              derivados, tacón de aguja</span
+            >
+          </div>
+
+          <div class="col-12">
+            <button class="mt-5 mb-3 p-button btn--outline-blue">
+              <img
+                src="../../../../../../assets/images/pichones/detalles/social/pinterest.png"
+                alt="button-image"
+              />
+              <span
+                class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
+                >Ver sugerencias</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container detalles text-center my-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2
+            class="font-color--blue font-size--xlarge font-fam--sprited font-weight--400 custom-heading-sprited"
+          >
+            Ultimos
+          </h2>
+          <h2
+            class="font-color--blue font-size--large font-fam--caslon font-weight--400 custom-heading-caslon"
+          >
+            Detalles
+          </h2>
+        </div>
+        <div class="col-12">
+          <h2
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400 mt-3"
+          >
+            REGLAS DEL EVENTO:
+          </h2>
+        </div>
+
+        <div class="col-12">
+          <ul>
+            <li>
+              ・Por razones de organización, te pedimos respetar la cantidad de
+              espacios asignados.
+            </li>
+            <li>
+              ・Al momento de la ceremonia, disfruta con nosotros y evita el
+              abuso del celular, nuestros fotógrafos se encargaran de capturar
+              cada momento especial.
+            </li>
+            <li>
+              ・Puedes llevar un cambio de zapatos más cómodo a la hora del
+              baile. Y disfrutar de la fiesta al máximo.
+            </li>
+            <li>
+              ・Y por ultimo disfruta al máximo con nosotros este momento que
+              nos llena de inmensa alegría.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center my-5">
+      <div class="row">
+        <div class="col-12">
+          <h2
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+          >
+            REGALOS:
+          </h2>
+        </div>
+        <div class="col-12">
+          <span
+            class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+            >Agradecemos tu presencia y buenos deseos, apreciamos sus muestras
+            de cariño en
+            <b
+              class="font-color--light-blue font-size--small font-fam--monserrat font-weight--600"
+              >regalo de sobre.</b
+            ></span
+          >
+        </div>
+        <div class="col-12 my-5">
+          <img
+            src="../../../../../../assets/images/pichones/detalles/icons/birds2.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

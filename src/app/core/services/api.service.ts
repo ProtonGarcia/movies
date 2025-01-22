@@ -10,9 +10,10 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ApiService {
   private api: string = '';
-  private api_key: string;
-  private languaje: string;
+  private api_key: string = '';
+  private languaje: string = '';
   clicked: boolean = false;
+  private auth: string = '';
 
   constructor(
     private http: HttpClient,
@@ -20,13 +21,13 @@ export class ApiService {
     public dialog: MatDialog
   ) {
     this.api = environment.apiServer;
+    this.auth = environment.apiAuth;
     this.api_key = environment.api_key;
     this.languaje = environment.language;
   }
 
   doRequest(url: string, data: any, type: string) {
-    const uri =
-      this.api + url + `?api_key=${this.api_key}&language=${this.languaje}`;
+    const uri = this.api + url;
     return new Promise((resolve) => {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -90,6 +91,24 @@ export class ApiService {
             );
           break;
       }
+    });
+  }
+
+  login(uri: string) {
+    return new Promise((resolve, reject) => {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+      });
+      return this.http
+        .get<any>(this.api + this.auth + uri, { headers })
+        .subscribe(
+          (response) => {
+            return resolve(response);
+          },
+          (error) => {
+            return reject(error);
+          }
+        );
     });
   }
 

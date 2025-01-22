@@ -20,10 +20,11 @@
 
 $light-pichones-background: #f7f7f7;
 $light-pichones-border-color: #fafafa;
-$light-pichones-border-color-blue: #aec3f2;
+$light-pichones-border-color-light-blue: #aec3f2;
 $light-pichones-text-blue: #152b5c;
 $light-pichones-text-blue-light: #4e6494;
 $light-pichones-text-white: #ffffff;
+$light-pichones-text-gray: #727377;
 
 //fonts
 $font-weight: 400;
@@ -31,63 +32,155 @@ $font-libre-caslon: "Libre Caslon";
 $font-monserrat: "Montserrat";
 $font-high-sprited: "High Spirited";
 
-body.pichones {
-  background-color: $light-pichones-background;
+.custom-heading-sprited {
+  margin-right: 50px;
+  margin-bottom: -16px;
 }
 
-.p-button {
-  background-color: transparent !important;
-  border-color: $light-pichones-border-color;
-  border-radius: 4px;
-  font-family: $font-libre-caslon;
-  font-weight: $font-weight;
-  font-size: 14px;
-  .p-button-label {
-    padding: 0 10px;
+.custom-heading-caslon {
+  margin-left: 61px;
+}
+
+.font-weight {
+  &--400 {
+    font-weight: 400;
+  }
+
+  &--600 {
+    font-weight: 600;
   }
 }
 
-app-header {
-  span {
+.font-fam {
+  &--caslon {
+    font-family: "Libre Caslon";
+  }
+
+  &--sprited {
+    font-family: "High Spirited";
+  }
+
+  &--monserrat {
+    font-family: "Montserrat";
+  }
+}
+
+.font-color {
+  &--light-blue {
+    color: $light-pichones-text-blue-light;
+  }
+
+  &--blue {
+    color: $light-pichones-text-blue;
+  }
+
+  &--white {
     color: $light-pichones-text-white;
-    font-family: $font-libre-caslon;
-    font-weight: $font-weight;
+  }
+}
+
+.font-size {
+  &--small {
     font-size: 14px;
   }
 
-  h2 {
-    font-family: $font-high-sprited;
-    color: $light-pichones-text-white;
-    font-weight: $font-weight;
+  &--normal {
+    font-size: 18px;
+  }
+
+  &--large {
+    font-size: 20px;
+  }
+
+  &--mlarge {
+    font-size: 24px;
+  }
+
+  &--m2large {
+    font-size: 32px;
+  }
+
+  &--xlarge {
     font-size: 50px;
   }
 }
 
+.p-button {
+  background-color: transparent !important;
+  border-radius: 4px;
+  font-family: $font-libre-caslon;
+  font-weight: $font-weight;
+  font-size: 14px;
+  width: 327px;
+  display: inline-block;
+
+  text-align: center;
+
+  .p-button-label {
+    padding: 0 10px;
+    display: inline-block;
+  }
+}
+
+.btn {
+  &--outline-blue {
+    border-color: $light-pichones-text-blue;
+  }
+
+  &--outline-white {
+    border-color: $light-pichones-border-color;
+  }
+
+  &--bg-blue {
+    background-color: $light-pichones-text-blue !important;
+  }
+}
+
+.c-height {
+  &--mid {
+    height: 50vh;
+  }
+
+  &--full {
+    height: 100vh;
+  }
+}
+
+body.pichones {
+  background-color: $light-pichones-background;
+}
+
 app-detalles {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: $font-monserrat;
+    color: $light-pichones-text-blue-light;
+    font-size: 14px;
+    margin-bottom: 1pc;
+  }
+
   .p-panel {
     .p-component {
       width: 100%;
     }
 
     .p-panel-header {
-      font-family: $font-libre-caslon;
-      color: $light-pichones-text-blue;
-      font-weight: $font-weight;
-      font-size: 18px;
-      background: transparent;
-      border-bottom: none;
-      padding-bottom: 12px;
-      border-color: $light-pichones-border-color-blue;
+      display: none;
     }
 
     .p-panel-content {
+      border: 1px solid;
+      border-radius: 4px;
       padding-top: 0px;
-      font-family: $font-monserrat;
-      color: $light-pichones-text-blue-light;
-      font-weight: $font-weight;
-      font-size: 14px;
       background: transparent;
-      border-color: $light-pichones-border-color-blue;
+      border-color: $light-pichones-border-color-light-blue;
     }
   }
 }
+
+// material components
+
+

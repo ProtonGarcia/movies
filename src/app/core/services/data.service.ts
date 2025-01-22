@@ -14,4 +14,8 @@ export class DataService {
   sendMessage(message: any) {
     this.subject.next(message);
   }
+
+  getData() {
+    return this.subject.asObservable();
+  }
 }

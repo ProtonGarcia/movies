@@ -6,33 +6,33 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'eventos/boda',
     pathMatch: 'full',
   },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./components/auth/login.module').then((m) => m.LoginModule),
-  },
-  {
-    path: 'eventos',
-    loadChildren: () =>
-      import('./pages/pichones/pichones.module').then((m) => m.PichonesModule),
-  },
-  {
-    path: 'pages',
-    pathMatch: 'full',
-    component: NavigationComponent,
-    children: [
-      {
-        path: '',
-        component: HomeComponent,
-      },
-    ],
-  },
+  // {
+  //   path: 'login',
+  //   loadChildren: () =>
+  //     import('./components/auth/login.module').then((m) => m.LoginModule),
+  // },
+  // {
+    //   path: 'pages',
+    //   pathMatch: 'full',
+    //   component: NavigationComponent,
+    //   children: [
+      //     {
+        //       path: '',
+        //       component: HomeComponent,
+        //     },
+        //   ],
+        // },
+        {
+          path: '',
+          loadChildren: () =>
+            import('./pages/pichones/pichones.module').then((m) => m.PichonesModule),
+        },
   {
     path: '**',
-    redirectTo: 'pages',
+    redirectTo: 'eventos/boda',
   },
 ];
 

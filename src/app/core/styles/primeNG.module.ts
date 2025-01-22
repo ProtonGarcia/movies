@@ -14,6 +14,8 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ImageModule } from 'primeng/image';
 import { PanelModule } from 'primeng/panel';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SelectModule } from 'primeng/select';
 
 @NgModule({
   imports: [
@@ -32,6 +34,8 @@ import { PanelModule } from 'primeng/panel';
     CheckboxModule,
     ImageModule,
     PanelModule,
+    MultiSelectModule,
+    SelectModule,
   ],
   exports: [
     InputSwitchModule,
@@ -49,6 +53,8 @@ import { PanelModule } from 'primeng/panel';
     CheckboxModule,
     ImageModule,
     PanelModule,
+    MultiSelectModule,
+    SelectModule,
   ],
 })
 export class PrimeNGModules {}
