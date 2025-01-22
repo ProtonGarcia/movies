@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +23,16 @@ import { FooterComponent } from './components/navigation/footer/footer.component
 import { SliderGaleriaComponent } from './components/slider-galeria/slider-galeria.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PichonesModule } from './pages/pichones/pichones.module';
+import { appConfig } from './app.config';
+
+function initializeApp(): () => Promise<void> {
+  return (): Promise<void> => {
+    return new Promise<void>((resolve) => {
+      // Lógica de inicialización
+      resolve();
+    });
+  };
+}
 
 @NgModule({
   declarations: [
@@ -44,12 +54,19 @@ import { PichonesModule } from './pages/pichones/pichones.module';
     NavigationModule,
     BrowserAnimationsModule,
     MaterialModule,
-    // PrimeNGModules,
+    PrimeNGModules,
     HttpClientModule,
     PichonesModule,
-    LoginModule
+    LoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      multi: true,
+    },
+    ...appConfig.providers!,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

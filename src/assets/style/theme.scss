@@ -1,245 +1,256 @@
-@use "@angular/material" as mat;
+// @use "@angular/material" as mat;
+// @use "@angular/" as core;
+
+// $custom-primary: core.define-palette(core.$indigo-palette);
+// $custom-accent: core.define-palette(core.$pink-palette, A200, A100, A400);
+// $custom-warn: core.define-palette(core.$red-palette);
+    
+// $custom-theme: core.define-light-theme((
+//   color: (
+//     primary: $custom-primary,
+//     accent: $custom-accent,
+//     warn: $custom-warn,
+//   ),
+//   typography: mat.define-typography-config(),
+// ));
+
+// @include mat.all-component-themes($custom-theme);
+
+// $custom-light-theme: mat.define-light-theme(
+//   (
+//     color: (
+//       primary: $custom-primary,
+//       accent: $custom-accent,
+//       warn: $custom-warn,
+//     ),
+//   )
+// );
+
+// $custom-dark-theme: mat.define-dark-theme(
+//   (
+//     color: (
+//       primary: $custom-primary,
+//       accent: $custom-accent,
+//       warn: $custom-warn,
+//     ),
+//   )
+// );
+
+// @include mat.core();
+// @include mat.all-component-themes($custom-light-theme);
+
+// .dark-theme {
+//   @include mat.all-component-colors($custom-dark-theme);
+// }
+
+// $dark-background: #0a0a0d;
+// $dark-text: #ffffff;
+// $dark-border: #555;
+// $dark-primary: #14141a;
+// $dark-second: #1e1e1e;
+// $dark-third: #040405;
+// $dark-four: #191919;
+// $dark-carrousel: #00a9e5;
+// $dark-gallery-indicator: #0500f2;
+
+// $light-background: #f9f9f9;
+// $light-text: #333;
+// $light-text-dark: #000000;
+// $light-border: #ccc;
+// $light-primary: #ffffff;
+// $light-second: #cccccc;
+// $light-third: #f1f1f1;
+// $light-four: #191919;
+// $light-carrousel: #000000;
+
+// .p-galleria .p-galleria-caption {
+//   height: 100% !important;
+// }
+
+// .p-galleria-indicators {
+//   background: none;
+// }
+
+// .p-galleria-indicator {
+//   width: 8px;
+//   height: 8px;
+//   border-radius: 50%;
+//   background-color: rgba($light-third, 0.39);
+//   margin: 0 5px;
+//   border: none;
+//   padding: 0;
+// }
+
+// .p-galleria-indicator.p-highlight {
+//   background-color: $dark-gallery-indicator;
+//   border: none;
+//   -webkit-backdrop-filter: blur(4px);
+
+//   backdrop-filter: blur(4px);
+// }
+
+// .p-link {
+//   display: none;
+// }
+
+// .p-carousel .p-carousel-prev,
+// .p-carousel .p-carousel-next {
+//   display: none !important;
+// }
+
+// body.theme-dark {
+
+//   body{
+//     background: #0a0a0d;;
+//   }
 
 
-$custom-primary: mat.define-palette(mat.$indigo-palette);
-$custom-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$custom-warn: mat.define-palette(mat.$red-palette);
+//   .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider,
+//   .p-inputswitch.p-inputswitch-checked:hover .p-inputswitch-slider {
+//     background: $dark-text !important;
+//   }
 
-$custom-light-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $custom-primary,
-      accent: $custom-accent,
-      warn: $custom-warn,
-    ),
-  )
-);
+//   .p-toolbar {
+//     background-color: $dark-primary;
+//     border: 0px;
 
-$custom-dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $custom-primary,
-      accent: $custom-accent,
-      warn: $custom-warn,
-    ),
-  )
-);
+//     i {
+//       color: $dark-text;
+//     }
 
-@include mat.core();
-@include mat.all-component-themes($custom-light-theme);
+//     ul,
+//     ol,
+//     li {
+//       color: $dark-text;
+//     }
 
-.dark-theme {
-  @include mat.all-component-colors($custom-dark-theme);
-}
+//     .p-inputtext {
+//       background-color: $dark-second !important;
+//     }
+//     .p-icon-field-left .p-input-icon.pi.pi-search {
+//       color: $dark-text !important;
+//     }
 
-$dark-background: #0a0a0d;
-$dark-text: #ffffff;
-$dark-border: #555;
-$dark-primary: #14141a;
-$dark-second: #1e1e1e;
-$dark-third: #040405;
-$dark-four: #191919;
-$dark-carrousel: #00a9e5;
-$dark-gallery-indicator: #0500f2;
+//     button {
+//       background-color: $dark-four;
+//       border-color: $dark-four;
+//       color: $dark-text;
+//     }
+//   }
 
-$light-background: #f9f9f9;
-$light-text: #333;
-$light-text-dark: #000000;
-$light-border: #ccc;
-$light-primary: #ffffff;
-$light-second: #cccccc;
-$light-third: #f1f1f1;
-$light-four: #191919;
-$light-carrousel: #000000;
+//   .mat-header {
+//     background-color: $dark-background;
+//     color: $dark-text;
+//   }
 
-.p-galleria .p-galleria-caption {
-  height: 100% !important;
-}
+//   .mat-container {
+//     background-color: $dark-background;
+//     color: $dark-text;
+//   }
 
-.p-galleria-indicators {
-  background: none;
-}
+//   .mat-sidenav {
+//     background-color: $dark-background;
+//     color: $dark-text;
+//   }
 
-.p-galleria-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba($light-third, 0.39);
-  margin: 0 5px;
-  border: none;
-  padding: 0;
-}
+//   .mat-sidenav-content {
+//     background-color: $dark-background;
+//     color: $dark-text;
+//   }
 
-.p-galleria-indicator.p-highlight {
-  background-color: $dark-gallery-indicator;
-  border: none;
-  -webkit-backdrop-filter: blur(4px);
+//   footer {
+//     background-color: $dark-third;
+//     color: $dark-text;
+//   }
 
-  backdrop-filter: blur(4px);
-}
+//   .cards-title {
+//     color: $dark-carrousel;
+//   }
 
-.p-link {
-  display: none;
-}
+//   .mat-tree,
+//   app-sidenav,
+//   .close_menu_btn {
+//     background-color: $dark-background;
 
-.p-carousel .p-carousel-prev,
-.p-carousel .p-carousel-next {
-  display: none !important;
-}
+//     span,
+//     mat-icon {
+//       color: $dark-text !important;
+//     }
+//   }
+// }
 
-body.theme-dark {
+// body.theme-light {
+//   .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider,
+//   .p-inputswitch.p-inputswitch-checked:hover .p-inputswitch-slider {
+//     background: $light-second !important;
+//   }
 
-  body{
-    background: #0a0a0d;;
-  }
+//   .p-toolbar {
+//     background-color: $light-third !important;
+//     border: 0px;
 
+//     i {
+//       color: $light-text-dark !important;
+//     }
 
-  .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider,
-  .p-inputswitch.p-inputswitch-checked:hover .p-inputswitch-slider {
-    background: $dark-text !important;
-  }
+//     ul,
+//     ol,
+//     li,
+//     a,
+//     .menu {
+//       color: $light-text-dark !important;
+//     }
 
-  .p-toolbar {
-    background-color: $dark-primary;
-    border: 0px;
+//     .p-inputtext {
+//       background-color: $dark-second !important;
+//     }
+//     .p-icon-field-left .p-input-icon.pi.pi-search {
+//       color: $dark-text !important;
+//     }
 
-    i {
-      color: $dark-text;
-    }
+//     button {
+//       background-color: $dark-four;
+//       border-color: $dark-four;
+//       color: $dark-text;
+//     }
+//   }
 
-    ul,
-    ol,
-    li {
-      color: $dark-text;
-    }
+//   .mat-header {
+//     background-color: $dark-background;
+//     color: $light-primary;
+//   }
 
-    .p-inputtext {
-      background-color: $dark-second !important;
-    }
-    .p-icon-field-left .p-input-icon.pi.pi-search {
-      color: $dark-text !important;
-    }
+//   .mat-container {
+//     background-color: $light-background;
+//     color: $light-primary;
+//   }
 
-    button {
-      background-color: $dark-four;
-      border-color: $dark-four;
-      color: $dark-text;
-    }
-  }
+//   .mat-sidenav {
+//     background-color: $light-background;
+//     color: $light-primary;
+//   }
 
-  .mat-header {
-    background-color: $dark-background;
-    color: $dark-text;
-  }
+//   .mat-sidenav-content {
+//     background-color: $light-background;
+//     color: $light-primary;
+//   }
 
-  .mat-container {
-    background-color: $dark-background;
-    color: $dark-text;
-  }
+//   footer {
+//     background-color: $light-second;
+//     color: $light-second;
+//   }
 
-  .mat-sidenav {
-    background-color: $dark-background;
-    color: $dark-text;
-  }
+//   .cards-title {
+//     color: $light-carrousel;
+//   }
 
-  .mat-sidenav-content {
-    background-color: $dark-background;
-    color: $dark-text;
-  }
+//   .mat-tree,
+//   app-sidenav {
+//     background-color: $light-background;
 
-  footer {
-    background-color: $dark-third;
-    color: $dark-text;
-  }
-
-  .cards-title {
-    color: $dark-carrousel;
-  }
-
-  .mat-tree,
-  app-sidenav,
-  .close_menu_btn {
-    background-color: $dark-background;
-
-    span,
-    mat-icon {
-      color: $dark-text !important;
-    }
-  }
-}
-
-body.theme-light {
-  .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider,
-  .p-inputswitch.p-inputswitch-checked:hover .p-inputswitch-slider {
-    background: $light-second !important;
-  }
-
-  .p-toolbar {
-    background-color: $light-third !important;
-    border: 0px;
-
-    i {
-      color: $light-text-dark !important;
-    }
-
-    ul,
-    ol,
-    li,
-    a,
-    .menu {
-      color: $light-text-dark !important;
-    }
-
-    .p-inputtext {
-      background-color: $dark-second !important;
-    }
-    .p-icon-field-left .p-input-icon.pi.pi-search {
-      color: $dark-text !important;
-    }
-
-    button {
-      background-color: $dark-four;
-      border-color: $dark-four;
-      color: $dark-text;
-    }
-  }
-
-  .mat-header {
-    background-color: $dark-background;
-    color: $light-primary;
-  }
-
-  .mat-container {
-    background-color: $light-background;
-    color: $light-primary;
-  }
-
-  .mat-sidenav {
-    background-color: $light-background;
-    color: $light-primary;
-  }
-
-  .mat-sidenav-content {
-    background-color: $light-background;
-    color: $light-primary;
-  }
-
-  footer {
-    background-color: $light-second;
-    color: $light-second;
-  }
-
-  .cards-title {
-    color: $light-carrousel;
-  }
-
-  .mat-tree,
-  app-sidenav {
-    background-color: $light-background;
-
-    span,
-    mat-icon {
-      color: $light-text-dark !important;
-    }
-  }
-}
+//     span,
+//     mat-icon {
+//       color: $light-text-dark !important;
+//     }
+//   }
+// }
