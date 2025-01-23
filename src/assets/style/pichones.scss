@@ -18,6 +18,7 @@
   src: url("../fonts/pichones/montserrat/montserrat.ttf") format("truetype");
 }
 
+
 $light-pichones-background: #f7f7f7;
 $light-pichones-border-color: #fafafa;
 $light-pichones-border-color-light-blue: #aec3f2;
@@ -25,6 +26,7 @@ $light-pichones-text-blue: #152b5c;
 $light-pichones-text-blue-light: #4e6494;
 $light-pichones-text-white: #ffffff;
 $light-pichones-text-gray: #727377;
+$light-pichones-text-gray-2: #bbbbbb;
 
 //fonts
 $font-weight: 400;
@@ -33,6 +35,7 @@ $font-monserrat: "Montserrat";
 $font-high-sprited: "High Spirited";
 
 //width
+$w-small: 157.5px;
 $w-base: 327px;
 
 //height
@@ -111,11 +114,17 @@ $h-base: 48px;
   }
 }
 
-.w-base{
-  width: $w-base;
+.w {
+  &-small {
+    width: $w-small !important;
+  }
+
+  &-base {
+    width: $w-base !important;
+  }
 }
 
-.h-base{
+.h-base {
   height: $h-base;
 }
 
@@ -198,7 +207,93 @@ app-detalles {
 
 // material components
 
-
-.p-multiselect{
+.p-multiselect {
   width: $w-base;
+  background: $light-pichones-text-white !important;
+  color: $light-pichones-text-blue;
+
+  .p-multiselect-header {
+    color: $light-pichones-text-blue;
+  }
+
+  .p-multiselect-label {
+    color: $light-pichones-text-blue;
+  }
+
+  .p-multiselect-overlay {
+    background: $light-pichones-text-white !important;
+  }
+
+  .p-multiselect-option {
+    color: $light-pichones-text-blue;
+    font-family: $font-monserrat;
+
+    .p-checkbox-box {
+      background: $light-pichones-text-white !important;
+      border-color: $light-pichones-text-gray-2;
+    }
+  }
+
+  //selected
+  .p-multiselect-option {
+    color: $light-pichones-text-blue;
+    font-family: $font-monserrat;
+
+    .p-checkbox-box {
+      border: 1px solid $light-pichones-text-blue-light !important;
+    }
+
+    .p-highlight {
+      .p-checkbox-box {
+        border: 10px solid $light-pichones-text-blue-light !important;
+      }
+    }
+
+    .p-checkbox-icon {
+      color: $light-pichones-text-white !important;
+      background: $light-pichones-text-blue-light !important;
+    }
+  }
+
+  .p-multiselect-option:not(.p-multiselect-option-selected):not(
+      .p-disabled
+    ).p-focus {
+    background: $light-pichones-text-white !important;
+    color: $light-pichones-text-blue;
+  }
+
+  .p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover)
+    .p-checkbox-box {
+    background: $light-pichones-text-white !important;
+    border-color: $light-pichones-text-gray-2;
+  }
+
+  .p-multiselect-header.ng-star-inserted {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  //scrollbar styles
+
+  .p-multiselect-list-container::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de scroll */
+  }
+
+  .p-multiselect-list-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+
+  .p-multiselect-list-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color del thumb (la barra) */
+    border-radius: 10px;
+  }
+
+  .p-multiselect-list-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb al pasar el mouse */
+  }
+}
+
+.p-multiselect:not(.p-disabled).p-focus {
+  border-color: transparent !important;
 }

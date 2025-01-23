@@ -11,6 +11,7 @@ import { HeaderComponent } from './home/components/header/header.component';
 import { ButtonModule } from 'primeng/button';
 import { DetallesComponent } from './home/components/detalles/detalles.component';
 import { AsistenciaComponent } from './home/components/asistencia/asistencia.component';
+import { ReservasComponent } from './home/components/asistencia/dialogs/reservas/reservas.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ HomeComponent, HeaderComponent, DetallesComponent, AsistenciaComponent],
+  declarations: [ HomeComponent, HeaderComponent, DetallesComponent, AsistenciaComponent, ReservasComponent],
   imports: [
     CommonModule,
     MaterialModule,

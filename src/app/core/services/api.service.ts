@@ -4,6 +4,7 @@ import { environment } from '../environments/environment';
 import { DataService } from './data.service';
 import { ErrorComponent } from 'src/app/components/dialogs/error/error.component';
 import { MatDialog } from '@angular/material/dialog';
+import { SessionStorageService } from './sessionStorage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,8 @@ export class ApiService {
   constructor(
     private http: HttpClient,
     private data: DataService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private session: SessionStorageService
   ) {
     this.api = environment.apiServer;
     this.auth = environment.apiAuth;
@@ -27,10 +29,11 @@ export class ApiService {
   }
 
   doRequest(url: string, data: any, type: string) {
-    const uri = this.api + url;
+    const uri = this.api + environment.apiVersion + url;
     return new Promise((resolve) => {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.session.getData('token'),
       });
 
       switch (type) {
@@ -118,7 +121,6 @@ export class ApiService {
 
       clickedDialog.afterClosed().subscribe(() => {
         this.clicked = true;
-        console.log('clicked', this.clicked);
       });
     }
   }

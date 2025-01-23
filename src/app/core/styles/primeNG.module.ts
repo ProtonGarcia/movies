@@ -16,6 +16,7 @@ import { PanelModule } from 'primeng/panel';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectModule } from 'primeng/select';
 import { NgModule } from '@angular/core';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { NgModule } from '@angular/core';
     PanelModule,
     MultiSelectModule,
     SelectModule,
+    DialogModule,
   ],
   exports: [
     InputSwitchModule,
@@ -55,6 +57,7 @@ import { NgModule } from '@angular/core';
     PanelModule,
     MultiSelectModule,
     SelectModule,
+    DialogModule,
   ],
 })
 export class PrimeNGModules {}
