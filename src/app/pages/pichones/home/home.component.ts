@@ -6,12 +6,14 @@ import { SessionStorageService } from 'src/app/core/services/sessionStorage.serv
 import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
-    selector: 'app-home-pichones',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    standalone: false
+  selector: 'app-home-pichones',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  standalone: false,
 })
 export class HomeComponent {
+  public showAsistencia: boolean = false;
+
   constructor(
     private themeService: ThemeService,
     private route: ActivatedRoute,
@@ -38,11 +40,11 @@ export class HomeComponent {
             this.sessionStorage.setData('token', resp?.data?.token ?? '');
             this.dataService.sendMessage({
               username: resp?.data?.username ?? '',
-              confirmado: resp?.data?.confirmado ?? false,
               relacionados: resp?.data?.relacionados ?? [],
               component: 'AsistenciaComponent',
               action: 'login',
             });
+            this.showAsistencia = true;
           })
           .catch((error) => {
             console.error('fallo getUserParams', error);

@@ -42,6 +42,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
   constructor() {
-    console.log('Routes configured:', routes);
+    // console.log('Routes configured:', routes);
   }
 }

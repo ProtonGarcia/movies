@@ -12,7 +12,7 @@ import { NavbarComponent } from './components/navigation/navbar/navbar.component
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SidenavComponent } from './components/navigation/sidenav/sidenav.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TruncatePipe } from './core/pipes/trucate.pipe';
 
 import { LoginModule } from './components/auth/login.module';
@@ -24,6 +24,7 @@ import { SliderGaleriaComponent } from './components/slider-galeria/slider-galer
 import { HomeComponent } from './pages/home/home.component';
 import { PichonesModule } from './pages/pichones/pichones.module';
 import { appConfig } from './app.config';
+import { NetworkInterceptor } from './core/interceptor/network.interceptor';
 
 function initializeApp(): () => Promise<void> {
   return (): Promise<void> => {
@@ -65,6 +66,11 @@ function initializeApp(): () => Promise<void> {
         return initializerFn();
       }),
     ...appConfig.providers!,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NetworkInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

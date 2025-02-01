@@ -8,27 +8,30 @@
             >¡El gran día se acerca!</span
           >
 
-          <div class="d-flex flex-row justify-content-center align-items-center">
+          <div
+            class="d-flex flex-row justify-content-center align-items-center"
+          >
             <div class="d-flex flex-column w-25">
-                <span
-                  class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
-                  >24</span
-                >
-                <span>Días</span>
-              </div>
-              <div class="d-flex flex-column w-25">
-                <span
-                  class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
-                  >24</span
-                >
-                <span>Horas</span>
-              </div><div class="d-flex flex-column w-25">
-                <span
-                  class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
-                  >24</span
-                >
-                <span>Minutos</span>
-              </div>
+              <span
+                class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
+                >{{ remainingTime[0] }}</span
+              >
+              <span>Días</span>
+            </div>
+            <div class="d-flex flex-column w-25">
+              <span
+                class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
+                >{{ remainingTime[1] }}</span
+              >
+              <span>Horas</span>
+            </div>
+            <div class="d-flex flex-column w-25">
+              <span
+                class="font-color--blue font-size--m2large font-fam--caslon font-weight--400 custom-heading-caslon mx-0"
+                >{{ remainingTime[2] }}</span
+              >
+              <span>Minutos</span>
+            </div>
           </div>
         </div>
         <div class="col-12 my-2">
@@ -49,7 +52,7 @@
         <div class="col-12 my-2">
           <p-panel>
             <h2
-              class="mt-3 font-color--blue font-size--normal font-fam--caslon font-weight--400"
+              class="mt-3 font-color--blue font-size--small font-fam--caslon font-weight--400"
             >
               El FLECHAZO
             </h2>
@@ -66,7 +69,7 @@
         <div class="col-12 my-2">
           <p-panel>
             <h2
-              class="mt-3 font-color--blue font-size--normal font-fam--caslon font-weight--400"
+              class="mt-3 font-color--blue font-size--small font-fam--caslon font-weight--400"
             >
               EL CAMINO
             </h2>
@@ -76,14 +79,14 @@
               Con el tiempo, nuestro amor, al igual que nosotros fue madurando.
               Juntos enfrentamos los altibajos de crecer, compartiendo los
               desafíos como las alegrías. Los 10 años que hemos estado juntos
-              han sido como horas.
+              han sido como días.
             </p>
           </p-panel>
         </div>
         <div class="col-12 my-2">
           <p-panel>
             <h2
-              class="mt-3 font-color--blue font-size--normal font-fam--caslon font-weight--400"
+              class="mt-3 font-color--blue font-size--small font-fam--caslon font-weight--400"
             >
               UN COMPROMISO
             </h2>
@@ -92,7 +95,7 @@
             >
               Todo lo que soñábamos cuando éramos apenas adolescentes ahora es
               realidad. El 10 de noviembre de 2023, dimos un paso más a nuestra
-              relación y comprometimos.
+              relación y nos comprometimos.
             </p>
           </p-panel>
         </div>
@@ -102,33 +105,37 @@
 
   <div class="galleria mt-4">
     <div class="container">
-      <p-galleria
-        [value]="images"
-        [responsiveOptions]="responsiveOptions"
-        [transitionInterval]="3000"
-        [circular]="true"
-        [autoPlay]="true"
-        [showItemNavigators]="false"
-        [showThumbnails]="false"
-        [containerStyle]="{ 'max-width': '640px' }"
-        [numVisible]="5"
-      >
-        <ng-template pTemplate="item" let-item>
-          <img
-            [src]="item.itemImageSrc"
-            style="width: 100%; object-fit: cover"
-          />
-        </ng-template>
-      </p-galleria>
+      <div class="d-flex justify-content-center">
+        <p-galleria
+          [value]="images"
+          [responsiveOptions]="responsiveOptions"
+          [transitionInterval]="3000"
+          [circular]="true"
+          [autoPlay]="true"
+          [showItemNavigators]="false"
+          [showThumbnails]="false"
+          [containerStyle]="{ 'max-width': '640px' }"
+          [numVisible]="5"
+        >
+          <ng-template pTemplate="item" let-item>
+            <img
+              [src]="item.itemImageSrc"
+              style="width: 100%; object-fit: cover"
+            />
+          </ng-template>
+        </p-galleria>
+      </div>
     </div>
   </div>
 
   <div class="mt-4 detalles">
     <div class="container text-center">
-      <img
-        src="../../../../../../assets/images/pichones/detalles/icons/rings.png"
-        alt=""
-      />
+      <div class="col-12 my-3">
+        <img
+          src="../../../../../../assets/images/pichones/detalles/icons/rings.svg"
+          alt=""
+        />
+      </div>
       <h2
         class="font-color--blue font-size--small font-fam--caslon font-weight--400"
       >
@@ -154,11 +161,13 @@
           LA BODA
         </h2>
       </div>
-      <img
-        src="../../../../../../assets/images/pichones/detalles/icons/church.png"
-        alt=""
-        class="my-3"
-      />
+      <div class="col-12 my-3">
+        <img
+          src="../../../../../../assets/images/pichones/detalles/icons/church.svg"
+          alt=""
+          class=""
+        />
+      </div>
       <h2
         class="font-color--blue font-size--small font-fam--caslon font-weight--400"
       >
@@ -167,56 +176,68 @@
       <h2
         class="font-color--blue font-size--mlarge font-fam--caslon font-weight--400"
       >
-        Quinta Mirasol
+        Terraza Zentra
       </h2>
       <h2
         class="font-color--blue font-size--small font-fam--caslon font-weight--400"
       >
-        4:00 PM | 01 Marzo 2025
+        4:30 PM | 01 Marzo 2025
       </h2>
       <h2
-        class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+        class="font-color--blue font-size--small font-fam--caslon font-weight--400 mt-4"
       >
         ¿Cómo llegar?
       </h2>
       <span
         class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
-        >Frente a tanques Holanda, Calle Antigua a Huizucar, San Salvador</span
+        >87 Avenida Norte & Calle del mirador. Parquearse en Plaza Futura</span
       >
 
       <div class="col-12">
-        <button class="my-3 p-button btn--outline-blue h-base">
-          <img
-            src="../../../../../../assets/images/pichones/detalles/social/maps.png"
-            alt="button-image"
-          />
-          <span
-            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
-            >Ver en Google Maps</span
+        <div class="d-flex justify-content-center">
+          <a
+            href="https://maps.app.goo.gl/mG5WW3WNVJALwcXDA"
+            class="p-button btn--outline-blue h-base w-base"
+            target="_blank"
           >
-        </button>
+            <img
+              src="../../../../../../assets/images/pichones/detalles/social/maps.svg"
+              alt="button-image"
+            />
+            <span
+              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+              >Ver en Waze</span
+            >
+          </a>
+        </div>
       </div>
 
-      <div class="col-12">
-        <button class="my-3 p-button btn--outline-blue h-base">
-          <img
-            src="../../../../../../assets/images/pichones/detalles/social/waze.png"
-            alt="button-image"
-          />
-          <span
-            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
-            >Ver en Waze</span
+      <div class="col-12 mt-4">
+        <div class="d-flex justify-content-center">
+          <a
+            href="https://waze.com/ul/hd42tcr8e6"
+            class="p-button btn--outline-blue h-base w-base"
+            target="_blank"
           >
-        </button>
+            <img
+              src="../../../../../../assets/images/pichones/detalles/social/waze.svg"
+              alt="button-image"
+            />
+            <span
+              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+              >Ver en Waze</span
+            >
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="container dresscode text-center mt-5">
       <div class="head mb-5">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 my-3">
             <img
-              src="../../../../../../assets/images/pichones/detalles/icons/rings.png"
+              src="../../../../../../assets/images/pichones/detalles/icons/shoes.svg"
               alt=""
             />
           </div>
@@ -241,9 +262,9 @@
         <div class="row">
           <div class="col-12">
             <h2
-              class="font-color--blue font-size--large font-fam--caslon font-weight--400"
+              class="font-color--blue font-size--lxsmall font-fam--caslon font-weight--400"
             >
-              Caballeros:
+              Hombres:
             </h2>
           </div>
           <div class="col-12">
@@ -256,22 +277,28 @@
           <div class="col-12">
             <span
               class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
-              >No Usar: Tenis deportivos, jeans y camisetas. color negro y azul
-              marino en saco o blazer</span
+              ><br /><b>No Usar:</b> Color negro y azul marino en saco o blazer.
+              Tenis deportivos, jeans y camisetas.</span
             >
           </div>
 
-          <div class="col-12">
-            <button class="mt-5 mb-3 p-button btn--outline-blue h-base">
-              <img
-                src="../../../../../../assets/images/pichones/detalles/social/pinterest.png"
-                alt="button-image"
-              />
-              <span
-                class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
-                >Ver sugerencias</span
+          <div class="col-12 mt-4">
+            <div class="d-flex justify-content-center">
+              <a
+                href="https://www.pinterest.com/alealas05/dress-code-hombres-boda-garcia-sanchez/?invite_code=63483bc05d4d4d9b8579ba2856f10f81&sender=580190501903296794"
+                class="p-button btn--outline-blue h-base w-base"
+                target="_blank"
               >
-            </button>
+                <img
+                  src="../../../../../../assets/images/pichones/detalles/social/pinterest.svg"
+                  alt="button-image"
+                />
+                <span
+                  class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+                  >Ver sugerencias</span
+                >
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -280,9 +307,9 @@
         <div class="row">
           <div class="col-12">
             <h2
-              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+              class="font-color--blue font-size--lxsmall font-fam--caslon font-weight--400"
             >
-              Damas:
+              Mujeres:
             </h2>
           </div>
           <div class="col-12">
@@ -295,22 +322,29 @@
           <div class="col-12">
             <span
               class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
-              >No llevar: Color negro, azul marino, blanco, beige y sus
-              derivados, tacón de aguja</span
+            >
+              <br /><b>No Usar:</b> Color negro, azul marino, blanco, beige y
+              sus derivados.</span
             >
           </div>
 
-          <div class="col-12">
-            <button class="mt-5 mb-3 p-button btn--outline-blue h-base">
-              <img
-                src="../../../../../../assets/images/pichones/detalles/social/pinterest.png"
-                alt="button-image"
-              />
-              <span
-                class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
-                >Ver sugerencias</span
+          <div class="col-12 mt-4">
+            <div class="d-flex justify-content-center">
+              <a
+                href="https://www.pinterest.com/alealas05/dress-code-mujeres-boda-garcia-sanchez/?invite_code=912eea298c614648b34615fdb9af08f7&sender=580190501903296794"
+                class="p-button btn--outline-blue h-base w-base"
+                target="_blank"
               >
-            </button>
+                <img
+                  src="../../../../../../assets/images/pichones/detalles/social/pinterest.svg"
+                  alt="button-image"
+                />
+                <span
+                  class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+                  >Ver sugerencias</span
+                >
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -341,8 +375,8 @@
         <div class="col-12">
           <ul>
             <li>
-              ・Por razones de organización, te pedimos respetar la cantidad de
-              espacios asignados.
+              ・Por temas de organización, agradecemos respetar la cantidad de
+              espacios reservados.
             </li>
             <li>
               ・Al momento de la ceremonia, disfruta con nosotros y evita el
@@ -350,12 +384,16 @@
               cada momento especial.
             </li>
             <li>
-              ・Puedes llevar un cambio de zapatos más cómodo a la hora del
-              baile. Y disfrutar de la fiesta al máximo.
+              ・En nuestro día especial, queremos garantizar un ambiente
+              familiar. Por favor, no ingreses bebidas alcohólicas.
             </li>
             <li>
-              ・Y por ultimo disfruta al máximo con nosotros este momento que
-              nos llena de inmensa alegría.
+              ・Puedes llevar un cambio de zapatos más cómodo a la hora del
+              baile.
+            </li>
+            <li>
+              ・Por último, disfruta al máximo este momento con nosotros, que
+              hemos esperado con tanta ilusión y nos llena de alegría.
             </li>
           </ul>
         </div>
@@ -375,14 +413,13 @@
           <span
             class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
             >Agradecemos tu presencia y buenos deseos, apreciamos sus muestras
-            de cariño en
+            de cariño en <br />
             <b
               class="font-color--light-blue font-size--small font-fam--monserrat font-weight--600"
               >regalo de sobre.</b
             ></span
           >
         </div>
-     
       </div>
     </div>
   </div>

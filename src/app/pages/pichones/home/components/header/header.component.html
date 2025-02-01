@@ -1,30 +1,38 @@
 <div class="container">
-  <div class="row text-center align-bottom position-absolute bottom-0 mx-0">
-    <div class="col-12">
-      <span
-        class="font-color--white font-size--small font-fam--caslon font-weight--400"
-        >NUESTRA BODA</span
-      >
-    </div>
-    <div class="col-12">
-      <h2
-        class="my-2 font-color--white font-size--xlarge font-fam--sprited font-weight--400"
-      >
-        Paola & Jonathan
-      </h2>
-    </div>
+  <div class="row">
+    <div class="text-center align-bottom position-absolute bottom-0 mx-0">
+      <div class="col-12">
+        <span
+          class="font-color--white font-size--small font-fam--caslon font-weight--400"
+          >NUESTRA BODA</span
+        >
+      </div>
+      <div class="col-12">
+        <h2
+          class="my-2 font-color--white font-size--xlarge font-fam--sprited font-weight--400"
+        >
+          Paola & Jonathan
+        </h2>
+      </div>
 
-    <div class="col-12">
-      <span
-        class="font-color--white font-size--small font-fam--caslon font-weight--400"
-        >01・MAR・2025</span
-      >
-    </div>
+      <div class="col-12">
+        <span
+          class="font-color--white font-size--small font-fam--caslon font-weight--400"
+          >01・MAR・2025</span
+        >
+      </div>
 
-    <div class="col-12">
-      <button class="mt-5 mb-3 p-button btn--outline-white h-base">
-        <span class="font-color--white">Confirmar Asistencia</span>
-      </button>
+      <div class="col-12 mt-5 mb-3">
+        <div class="d-flex justify-content-center">
+          <button
+            [hidden]="hidden"
+            (click)="scrollToItem()"
+            class="p-button btn--outline-white h-base w-base"
+          >
+            <span class="font-color--white">{{ label }}</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

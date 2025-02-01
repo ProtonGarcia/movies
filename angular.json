@@ -25,18 +25,16 @@
               "src/styles.scss",
               "src/assets/style/theme.scss",
 
-             
               {
                 "input": "./src/assets/style/pichones.scss",
                 "bundleName": "pichones",
                 "inject": false
               },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/primeicons/primeicons.css"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeflex/primeflex.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"],
             "browser": "src/main.ts"
           },
           "configurations": {
@@ -60,6 +58,18 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "railway": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/app/core/environments/environment.ts",
+                  "with": "src/app/core/environments/environment.railway.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -72,6 +82,9 @@
             },
             "development": {
               "buildTarget": "pruebaCuscatlan:build:development"
+            },
+            "railway": {
+              "buildTarget": "pruebaCuscatlan:build:railway"
             }
           },
           "defaultConfiguration": "development"
@@ -93,14 +106,14 @@
               "src/styles.scss",
               "src/assets/style/theme.scss",
 
-              
               {
                 "input": "./src/assets/style/pichones.scss",
                 "bundleName": "pichones",
                 "inject": false
               },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/primeicons/primeicons.css"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeflex/primeflex.css"
             ],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
           }

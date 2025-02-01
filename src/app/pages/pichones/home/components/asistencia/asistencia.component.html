@@ -1,30 +1,132 @@
-<div class="container c-height--full">
+<div
+  class="container"
+  [ngClass]="showAsistencia ? 'c-height--full' : 'c-height--mid'"
+>
   <div class="row pt-5">
-    <div class="col-12 text-center">
-      <img
-        src="../../../../../../assets/images/pichones/detalles/icons/birds2.png"
-        alt=""
-      />
-    </div>
-    <div class="col-12 text-center my-5">
-      <h2
-        class="font-color--blue font-size--small font-fam--caslon font-weight--400"
-      >
-        ¿NOS ACOMPAÑARAS?
-      </h2>
+    <div *ngIf="showHeader; else dates" class="text-center">
+      <div class="col-12">
+        <span
+          class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+          >NUESTRA BODA</span
+        >
+      </div>
+      <div class="col-12">
+        <h2
+          class="my-2 font-color--blue font-size--xlarge font-fam--sprited font-weight--400"
+        >
+          Paola & Jonathan
+        </h2>
+      </div>
 
-      <span
-        class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
-        >Favor confirmar tu asistencia antes del
-        <b class="font-weight--600">17 de febrero.</b></span
-      >
+      <div class="col-12">
+        <span
+          class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+          >01・MAR・2025</span
+        >
+      </div>
     </div>
+    <ng-template #dates>
+      <div class="col-12 text-center">
+        <img
+          src="../../../../../../assets/images/pichones/detalles/icons/birds2.png"
+          alt=""
+        />
+      </div>
+      <div class="col-12 text-center my-5">
+        <h2
+          class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+        >
+          ¿NOS ACOMPAÑARAS?
+        </h2>
+
+        <span
+          class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400"
+          >Favor confirmar tu asistencia antes del
+          <b class="font-weight--600">17 de febrero.</b></span
+        >
+      </div>
+    </ng-template>
   </div>
 
   <!-- form  -->
 
-  <ng-container [ngSwitch]="accept">
-    <div class="d-flex flex-column justify-content-center align-items-center" *ngSwitchCase="true">
+  <div *ngIf="showHeader">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center mt-5">
+          <span
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >Invitado/a:</span
+          >
+        </div>
+
+        <div class="text-center">
+          <span
+            class="font-color--blue font-size--lsmall font-fam--caslon font-weight--400"
+          >
+            {{ username }}
+          </span>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="text-center mt-3">
+          <span
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >Tienes reservado:</span
+          >
+        </div>
+
+        <div class="text-center">
+          <span
+            class="font-color--blue font-size--lsmall font-fam--caslon font-weight--400"
+          >
+            {{ relacionados.length }} Espacios
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="relacionados.length > 1" class="col-12">
+        <div class="text-center mt-3">
+          <span
+            class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+            >Invitados asignados:</span
+          >
+        </div>
+
+        <div class="text-center">
+          <div *ngFor="let relacionado of relacionados" class="w-100">
+            <span
+              class="font-color--light-blue font-size--lsmall font-fam--monserrat font-weight--400"
+            >
+              {{ relacionado.username }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <button
+            mat-dialog-close
+            class="mt-5 mb-3 p-button btn--outline-blue h-base w-base"
+          >
+            <span
+              class="font-color--light-blue font-size--lsmall font-fam--caslon font-weight--400"
+              >Ver detalles de la boda &nbsp;&nbsp;<span
+                class="pi pi-angle-right"
+              ></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="showAsistencia" [ngSwitch]="accept">
+    <div
+      class="d-flex flex-column justify-content-center align-items-center"
+      *ngSwitchCase="true"
+    >
       <!-- confirmado  -->
       <div class="w-base">
         <div class="col-12 text-center">
@@ -38,14 +140,16 @@
         <div class="col-12 text-center">
           <div class="w-base">
             <button
-
-            (click)="changeView(undefined)"
+              (click)="changeView(undefined)"
               class="mt-5 p-button btn--bg-blue btn--outline-blue h-base w-base"
             >
               <span class="font-color--white">Modificar mi respuesta</span>
             </button>
-  
-            <button (click)="showReservas()" class="mt-2 mb-3 p-button btn--outline-blue h-base w-base">
+
+            <button
+              (click)="showReservas()"
+              class="mt-2 mb-3 p-button btn--outline-blue h-base w-base"
+            >
               <span class="font-color--blue">Ver mis espacios reservados</span>
             </button>
           </div>
@@ -54,26 +158,27 @@
     </div>
 
     <!-- fin confirmado  -->
-    <div class="d-flex flex-column justify-content-center align-items-center" *ngSwitchCase="false">
+    <div
+      class="d-flex flex-column justify-content-center align-items-center"
+      *ngSwitchCase="false"
+    >
       <!-- cancelado  -->
       <div class="w-base">
         <div class="col-12 text-center">
           <p
             class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
           >
-          Lamentamos que no puedas acompañarnos, agradecemos tus buenos deseos
+            Lamentamos que no puedas acompañarnos, agradecemos tus buenos deseos
           </p>
         </div>
         <div class="col-12 text-center">
           <div class="w-base">
             <button
-
-            (click)="changeView(undefined)"
+              (click)="changeView(undefined)"
               class="mt-5 p-button btn--bg-blue btn--outline-blue h-base w-base"
             >
               <span class="font-color--white">Modificar mi respuesta</span>
             </button>
-  
           </div>
         </div>
       </div>
@@ -84,10 +189,10 @@
         <div class="col-12 mt-2">
           <span
             class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
-            >Tu nombre:</span
+            >Invitado/a:</span
           >
           <p
-            class="font-color--blue font-size--small font-fam--caslon font-weight--400 text-center"
+            class="font-color--blue font-size--lsmall font-fam--caslon font-weight--400 text-center"
           >
             {{ username }}
           </p>
@@ -97,62 +202,125 @@
           *ngIf="relacionados.length > 1"
           class="col-12 d-flex flex-column justify-content-center align-items-center"
         >
-          <div class="w-base">
+          <div class="w-base d-flex align-items-start">
             <span
               class="font-color--light-blue font-size--small font-fam--monserrat font-weight--400 text-start"
             >
               ¿Quienes asistirán?
             </span>
           </div>
-          <div class="text-center">
-            <p-multiselect
-              [options]="relacionados"
-              [(ngModel)]="selectedInvitados"
-              optionLabel="name"
-              placeholder="Selecciona los asistentes"
-              [maxSelectedLabels]="3"
-              styleClass="w-full"
-              [showHeader]="true"
-              [selectedItemsLabel]="'{0} Invitados seleccionados'"
-              [showToggleAll]="false"
-              [filter]="false"
-              optionLabel="username"
-              (onChange)="actualizarConfirmado($event)"
+
+          <form [formGroup]="formGroup" class="w-base">
+            <div class="text-center">
+              <p-multiselect 
+                [options]="relacionados"
+                optionLabel="name"
+                placeholder="Selecciona los asistentes"
+                [maxSelectedLabels]="3"
+                styleClass="w-full"
+                [showHeader]="true"
+                [selectedItemsLabel]="'{0} Invitados seleccionados'"
+                [showToggleAll]="false"
+                [filter]="false"
+                optionLabel="username"
+                (onChange)="actualizarConfirmado($event)"
+                formControlName="selectedInvitados"
+              >
+                <ng-template pTemplate="header" class="py-0">
+                  <div class="p-multiselect-list-container">
+                    <ul class="p-multiselect-list">
+                      <li class="p-multiselect-option pb-0">
+                        <p-checkbox
+                          formControlName="selectall"
+                          [binary]="true"
+                          (onChange)="toggleAll($event.checked)"
+                        ></p-checkbox>
+                        <label class="ml-2 p-multiselect-label"
+                          >Seleccionar todos</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </ng-template>
+              </p-multiselect>
+            </div>
+          </form>
+
+          <div
+            class="w-base d-flex align-items-start"
+            *ngIf="
+              this.formGroup.value?.selectedInvitados.length == 0 &&
+              formGroup.get('selectedInvitados')?.touched
+            "
+          >
+            <small class="font-color--red"
+              >Debes seleccionar al menos un invitado.</small
             >
-              <ng-template pTemplate="header" class="py-0">
-                <div class="p-multiselect-list-container">
-                  <ul class="p-multiselect-list">
-                    <li class="p-multiselect-option pb-0">
-                      <p-checkbox
-                        [binary]="true"
-                        [(ngModel)]="checked"
-                        (onChange)="toggleAll(allSelected)"
-                      ></p-checkbox>
-                      <label class="ml-2 p-multiselect-label"
-                        >Seleccionar todos</label
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </ng-template>
-            </p-multiselect>
+          </div>
+        </div>
+
+        <div
+          *ngIf="this.formGroup.value?.selectedInvitados.length > 0"
+          class="col-12"
+        >
+          <div class="text-center mt-3">
+            <span
+              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+              >Tienes reservado:</span
+            >
+          </div>
+
+          <div class="text-center">
+            <span
+              class="font-color--blue font-size--lsmall font-fam--caslon font-weight--400"
+            >
+              {{ this.formGroup.value?.selectedInvitados.length }} Espacios
+            </span>
+          </div>
+        </div>
+
+        <!-- solo para un usario  -->
+        <div *ngIf="this.relacionados.length == 1" class="col-12">
+          <div class="text-center mt-3">
+            <span
+              class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+              >Tienes reservado:</span
+            >
+          </div>
+
+          <div class="text-center">
+            <span
+              class="font-color--blue font-size--lsmall font-fam--caslon font-weight--400"
+            >
+              {{ this.relacionados.length }} Espacio
+            </span>
           </div>
         </div>
 
         <div class="col-12 d-flex justify-content-center">
           <div class="w-base d-flex justify-content-between">
             <button
-              (click)="submit(false)"
-              class="mt-5 mb-3 p-button btn--bg-blue btn--outline-blue h-base w-small"
+              (click)="showConfirm(false)"
+              class="mt-5 mb-3 p-button btn--outline-blue h-base w-small"
             >
-              <span class="font-color--white">No podré asistir</span>
+              <span class="font-color--blue">No podré asistir</span>
             </button>
 
             <button
-              (click)="submit(true)"
-              class="mt-5 mb-3 p-button btn--outline-blue h-base w-small"
+              [ngClass]="
+                this.relacionados.length > 1 &&
+                this.formGroup.value?.selectedInvitados.length == 0
+                  ? 'btn--bg-light--blue'
+                  : 'btn--bg-blue'
+              "
+              [disabled]="
+                this.relacionados.length > 1 &&
+                this.formGroup.value?.selectedInvitados.length == 0
+              "
+              (click)="showConfirm(true)"
+              class="mt-5 mb-3 p-button h-base w-small"
             >
-              <span class="font-color--blue">Si, asistiré</span>
+              <span class="font-color--white">Si, asistiré</span>
             </button>
           </div>
         </div>

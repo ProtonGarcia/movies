@@ -1,14 +1,17 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { PhotoService } from '../../../core/services/imageservice';
+import { CountdownService } from '../../../core/services/dateService';
 
 @Component({
-    selector: 'app-detalles',
-    templateUrl: './detalles.component.html',
-    styleUrls: ['./detalles.component.css'],
-    providers: [PhotoService],
-    standalone: false
+  selector: 'app-detalles',
+  templateUrl: './detalles.component.html',
+  styleUrls: ['./detalles.component.css'],
+  providers: [PhotoService],
+  standalone: false,
 })
-export class DetallesComponent implements AfterViewInit {
+export class DetallesComponent implements AfterViewInit, OnDestroy {
+  public remainingTime: number[] = [];
+
   images: {
     itemImageSrc: string;
     thumbnailImageSrc: string;
@@ -18,30 +21,37 @@ export class DetallesComponent implements AfterViewInit {
 
   responsiveOptions: any[] = [
     {
-        breakpoint: '1300px',
-        numVisible: 4
+      breakpoint: '1300px',
+      numVisible: 4,
     },
     {
-        breakpoint: '575px',
-        numVisible: 1
-    }
-];
+      breakpoint: '575px',
+      numVisible: 1,
+    },
+  ];
 
-constructor(private photoService: PhotoService) {}
-  async ngAfterViewInit() {
-    await this.setImages()
-
+  ngOnDestroy() {
+    this.countdownService.stopCountdown();
   }
 
+  constructor(
+    private photoService: PhotoService,
+    private countdownService: CountdownService
+  ) {}
+  async ngAfterViewInit() {
+    await this.setImages();
+  }
 
   async ngOnInit() {
+    this.countdownService.startCountdown();
+    this.countdownService.getRemainingTime().subscribe((time) => {
+      this.remainingTime = time;
+    });
   }
 
-  public async setImages(){
-
+  public async setImages() {
     this.photoService.getImages().then((images) => {
       this.images = images.map((images: any) => {
-        console.log(images);
         return {
           itemImageSrc: images.itemImageSrc,
           thumbnailImageSrc: images.thumbnailImageSrc,

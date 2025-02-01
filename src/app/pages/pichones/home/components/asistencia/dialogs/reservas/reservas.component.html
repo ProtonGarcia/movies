@@ -1,8 +1,60 @@
-<h2 mat-dialog-title>Delete file</h2>
 <mat-dialog-content>
-  Would you like to delete cat.jpeg?
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="d-flex justify-content-end align-items-center mt-2 px-2">
+        <button mat-button (click)="dialogRef.close()">
+          <span
+            class="pi pi-times font-color--black"
+            style="font-size: 1.5rem"
+          ></span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="col-12 d-flex flex-column justify-content-center align-items-center mt-2"
+    >
+      <span
+        class="font-color--blue font-size--xsmall font-fam--caslon font-weight--400"
+        >Invitado/a:</span
+      >
+      <h2
+        class="font-color--blue font-size--lsmall font-fam--caslon font-weight--700"
+      >
+        {{ username }}
+      </h2>
+    </div>
+
+    <div
+      class="col-12 d-flex flex-column justify-content-center align-items-center mt-4"
+    >
+      <span
+        class="font-color--blue font-size--xsmall font-fam--caslon font-weight--400"
+        >Tienes reservado:</span
+      >
+      <h2
+        class="font-color--blue font-size--lsmall font-fam--caslon font-weight--700"
+      >
+        {{ relacionados.length }} Espacios
+      </h2>
+    </div>
+
+    <div
+      *ngIf="relacionados.length > 1"
+      class="col-12 d-flex flex-column justify-content-center align-items-center mt-2"
+    >
+      <div class="w-lsmall text-center">
+        <span
+          class="font-color--blue font-size--xsmall font-fam--caslon font-weight--400"
+          >Invitados confirmados:</span
+        >
+        <div *ngFor="let relacionado of relacionados" class="w-100">
+          <span
+            class="font-color--light-blue font-size--lsmall font-fam--monserrat font-weight--400"
+          >
+            {{ relacionado.username }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
-</mat-dialog-actions>

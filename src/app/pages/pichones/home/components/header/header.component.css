@@ -19,3 +19,22 @@
     background-color: rgba(0, 0, 0, 0.2); 
     pointer-events: none; 
 }
+
+/* 
+::ng-deep .cdk-overlay-pane.mat-mdc-dialog-panel {
+    max-width: 100vw !important;
+    background: #fff;
+    border-radius: 20px;
+  }
+  
+
+  .asistencia-dialog.mat-mdc-dialog-container {
+    border-radius: 0px;
+  } */
+
+  ::ng-deep .cdk-overlay-pane.asistencia-dialog {
+    max-width: 100vw !important;
+    background: #fff;
+    border-radius: 0px !important;
+  }
+

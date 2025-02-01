@@ -1,0 +1,39 @@
+<mat-dialog-content>
+  <div class="row mb-3">
+    <div
+      class="col-12 d-flex flex-column justify-content-center align-items-center mt-2"
+    >
+      <div class="w-lsmall text-center">
+        <h2
+          class="font-color--blue font-size--small font-fam--caslon font-weight--400"
+        >
+          {{ message.header }}
+        </h2>
+
+        <span
+          class="font-color--blue font-size--small font-fam--monserrat font-weight--400"
+        >
+          {{ message.body }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 d-flex justify-content-center">
+    <div class="w-base d-flex justify-content-between mt-2">
+      <button
+        mat-dialog-close
+        class="mb-3 p-button btn--outline-blue h-base w-small xs:w-xsmall sm:w-small md:w-small"
+      >
+        <span class="font-color--blue">Cancelar</span>
+      </button>
+
+      <button
+        (click)="this.dialogRef.close(true)"
+        class="mb-3 p-button btn--bg-light--blue h-base w-small xs:w-xsmall sm:w-small md:w-small"
+      >
+        <span class="font-color--white"> {{ message.button }} </span>
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>
